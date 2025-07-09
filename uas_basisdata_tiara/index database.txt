@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Sistem Akademik</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #e0f2ff, #c2e9fb);
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar-custom {
+      background-color: #003366;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+    .navbar-custom h1 {
+      font-size: 28px;
+      margin: 0;
+    }
+    .navbar-custom p {
+      font-size: 14px;
+      margin: 5px 0 0 0;
+      color: #b3cde0;
+    }
+    .menu-section {
+      margin: 40px auto;
+      max-width: 900px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .menu-btn {
+      background-color: #005b96;
+      color: white;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: 0.2s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .menu-btn:hover {
+      background-color: #03396c;
+      transform: scale(1.05);
+    }
+    .footer {
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+      margin-top: 60px;
+      padding-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar-custom">
+    <h1>Sistem Akademik UPB</h1>
+    <p>Kelola data mahasiswa, dosen, matakuliah & KRS dengan mudah</p>
+  </div>
+
+  <div class="menu-section">
+    <a href="daftar_mahasiswa.php"><button class="menu-btn">Data Mahasiswa</button></a>
+    <a href="daftar_dosen.php"><button class="menu-btn">Data Dosen</button></a>
+    <a href="daftar_matakuliah.php"><button class="menu-btn">Data Matakuliah</button></a>
+    <a href="daftar_krs.php"><button class="menu-btn">Data KRS</button></a>
+    <a href="daftar_jadwal.php"><button class="menu-btn">Jadwal Mengajar</button></a>
+    <a href="tambah_mahasiswa.php"><button class="menu-btn">Tambah Mahasiswa</button></a>
+    <a href="tambah_dosen.php"><button class="menu-btn">Tambah Dosen</button></a>
+    <a href="tambah_matakuliah.php"><button class="menu-btn">Tambah Matakuliah</button></a>
+    <a href="tambah_krs.php"><button class="menu-btn">Tambah KRS</button></a>
+    <a href="laporan_krs.php"><button class="menu-btn">Laporan KRS</button></a>
+  </div>
+
+</body>
+</html>
+
+<?php
+date_default_timezone_set('Asia/Jakarta');
+$jam = date("H");
+if ($jam >= 5 && $jam < 12) $greet = "Selamat pagi!";
+elseif ($jam >= 12 && $jam < 17) $greet = "Selamat siang!";
+elseif ($jam >= 17 && $jam < 21) $greet = "Selamat sore!";
+else $greet = "Selamat malam!";
+?>
+<p class="text-center text-muted"><?php echo $greet . " Sekarang pukul " . date("H:i"); ?></p>
+
+<div class="text-center mt-4">
+  <span id="typing-text" style="font-weight: bold;"></span>
+</div>
+
+<script>
+  const text = "Selamat datang di Sistem Akademik UPB 🚀";
+  let i = 0;
+  function typeEffect() {
+    if (i < text.length) {
+      document.getElementById("typing-text").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeEffect, 60);
+    }
+  }
+  typeEffect();
+</script>
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<div data-aos="fade-up" data-aos-duration="1000">
+  <p class="text-center"> "Selamat datang di Sistem Akademik UPB 🚀"</p>
+</div>
